@@ -1,25 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import { useContext } from 'react';
+import { StoreContext } from './store';
+import { Header, Footer, Main } from './component';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [state, dispatch] = useContext(StoreContext);
+
+    console.log(state);
+    return (
+        <section className="todoapp">
+            <Header />
+            <Main />
+            <Footer />
+        </section>
+    );
 }
 
 export default App;
