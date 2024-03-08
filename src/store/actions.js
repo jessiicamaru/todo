@@ -13,9 +13,10 @@ export const setJobs = (payload) => ({
     },
 });
 
-export const setToggleJob = (payload) => ({
+export const setToggleJob = ({ id, finished }) => ({
     type: SET_TOGGLE_JOB,
-    payload,
+    id,
+    finished,
 });
 
 export const setToggleAll = (payload) => ({

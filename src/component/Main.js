@@ -1,11 +1,19 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { StoreContext } from '../store';
 import { actions } from '../store';
 
 function Main() {
     const [state, dispatch] = useContext(StoreContext);
 
-    const jobs = state.jobs;
+    const [jobs, setJobs] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:3000/todoJob')
+            .then((res) => res.json())
+            .then((jobs) => {
+                setJobs(jobs);
+                state.jobs = jobs;
+            });
+    }, [state]);
 
     return (
         <section className="main">
@@ -26,16 +34,16 @@ function Main() {
                         if (state.filter === 'Completed') return job.finished === true;
                         return job;
                     })
-                    .map((job, index) => {
+                    .map((job) => {
                         return (
-                            <li className={job.finished ? 'completed' : ''} key={index}>
+                            <li className={job.finished ? 'completed' : ''} key={job.id}>
                                 <div className="view">
                                     <input
                                         className="toggle"
                                         type="checkbox"
                                         checked={job.finished ? true : false}
                                         onChange={() => {
-                                            dispatch(actions.setToggleJob(index));
+                                            dispatch(actions.setToggleJob({ id: job.id, finished: job.finished }));
                                         }}
                                     />
                                     <label>{job.name}</label>

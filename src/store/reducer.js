@@ -1,4 +1,5 @@
 import { constants } from '../store';
+import { addData, editData } from './fetchData';
 
 const initState = {
     jobs: [],
@@ -16,19 +17,18 @@ function reducer(state, action) {
             };
 
         case constants.ADD_JOBS:
+            const jobs = addData(action.payload);
             return {
                 ...state,
-                jobs: [...state.jobs, action.payload],
+                jobs: jobs,
             };
-        case constants.SET_TOGGLE_JOB:
-            let temp = state.jobs;
-            let data = temp[action.payload];
-            data.finished = !data.finished;
 
-            temp = temp.splice(action.payload, 1, { ...data });
+        case constants.SET_TOGGLE_JOB:
+            const afterEditJobs = editData(action.id, { finished: !action.finished });
 
             return {
                 ...state,
+                jobs: afterEditJobs,
             };
 
         case constants.SET_TOGGLE_ALL:
