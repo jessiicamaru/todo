@@ -1,4 +1,16 @@
-import { SET_TODO_INPUT, ADD_JOBS, SET_TOGGLE_JOB, SET_TOGGLE_ALL, SET_CLEAR_ALL, SET_FILTER } from './constants';
+import {
+    SET_TODO_INPUT,
+    ADD_JOBS,
+    SET_TOGGLE_JOB,
+    SET_TOGGLE_ALL,
+    SET_CLEAR_ALL,
+    SET_FILTER,
+    DELETE_JOB,
+    SET_TODO_EDIT_INPUT,
+    SET_EDITING,
+    EDIT_JOB,
+    REMOVE_EDITING,
+} from './constants';
 
 export const setTodoInput = (payload) => ({
     type: SET_TODO_INPUT,
@@ -13,11 +25,12 @@ export const setJobs = (payload) => ({
     },
 });
 
-export const setToggleJob = ({ id, finished }) => ({
-    type: SET_TOGGLE_JOB,
-    id,
-    finished,
-});
+export const setToggleJob = (payload) => {
+    return {
+        type: SET_TOGGLE_JOB,
+        payload,
+    };
+};
 
 export const setToggleAll = (payload) => ({
     type: SET_TOGGLE_ALL,
@@ -30,5 +43,30 @@ export const setClearAll = () => ({
 
 export const setFilter = (payload) => ({
     type: SET_FILTER,
+    payload,
+});
+
+export const deleteJob = (payload) => ({
+    type: DELETE_JOB,
+    payload,
+});
+
+export const setTodoEditInput = (payload) => ({
+    type: SET_TODO_EDIT_INPUT,
+    payload,
+});
+
+export const setEditing = (payload) => ({
+    type: SET_EDITING,
+    payload,
+});
+
+export const editJob = (payload) => ({
+    type: EDIT_JOB,
+    payload,
+});
+
+export const removeEditing = (payload) => ({
+    type: REMOVE_EDITING,
     payload,
 });
