@@ -1,14 +1,36 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { actions } from '../store';
 import { StoreContext } from '../store';
 
 function Footer() {
     const [state, dispatch] = useContext(StoreContext);
+    const [count, setCount] = useState(() => {
+        let countFalse = 0;
+        fetch('http://localhost:3000/todoJob')
+            .then((res) => res.json())
+            .then((jobs) => {
+                jobs.forEach((job) => {
+                    if (job.finished === false) countFalse++;
+                });
+
+                setCount(countFalse);
+            });
+    });
+
+    useEffect(() => {
+        let countFalse = 0;
+        if (Array.isArray(state.jobs))
+            state.jobs.forEach((job) => {
+                if (job.finished === false) countFalse++;
+            });
+
+        setCount(countFalse);
+    }, [state]);
 
     return (
         <footer className="footer">
             <span className="todo-count">
-                <strong>{state.jobs.length}</strong> item left
+                <strong>{count}</strong> item left
             </span>
 
             <ul className="filters">

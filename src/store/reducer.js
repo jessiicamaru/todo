@@ -1,11 +1,15 @@
 import { constants } from '../store';
-import { addData, editData } from './fetchData';
+import { addData } from './fetchData';
+
+const initFilter = JSON.parse(localStorage.getItem('TODO_FILTER')) || { toggleAll: false, filter: 'All', itemLeft: 0 };
 
 const initState = {
     jobs: [],
     todoInput: '',
     toggleAll: false,
     filter: 'All',
+    itemLeft: 0,
+    ...initFilter,
 };
 
 function reducer(state, action) {
@@ -24,11 +28,13 @@ function reducer(state, action) {
             };
 
         case constants.SET_TOGGLE_JOB:
-            const afterEditJobs = editData(action.id, { finished: !action.finished });
-
+            state.jobs.forEach((job, index) => {
+                if (job.id === action.id) {
+                    job.finished = !job.finished;
+                }
+            });
             return {
                 ...state,
-                jobs: afterEditJobs,
             };
 
         case constants.SET_TOGGLE_ALL:
@@ -47,10 +53,16 @@ function reducer(state, action) {
                     };
                 });
             }
+            const toggleAllStorage = {
+                filter: state.filter,
+                toggleAll: !action.payload,
+            };
+            localStorage.setItem('TODO_FILTER', JSON.stringify(toggleAllStorage));
             return {
                 ...state,
                 toggleAll: !action.payload,
             };
+
         case constants.SET_CLEAR_ALL:
             state.jobs = state.jobs.map((job) => {
                 return {
@@ -58,15 +70,27 @@ function reducer(state, action) {
                     finished: false,
                 };
             });
+            const clearAllStorage = {
+                toggleAll: false,
+                filter: state.filter,
+            };
+            localStorage.setItem('TODO_FILTER', JSON.stringify(clearAllStorage));
             return {
                 ...state,
                 toggleAll: false,
             };
+
         case constants.SET_FILTER:
+            const filterStorage = {
+                toggleAll: state.toggleAll,
+                filter: action.payload,
+            };
+            localStorage.setItem('TODO_FILTER', JSON.stringify(filterStorage));
             return {
                 ...state,
                 filter: action.payload,
             };
+
         default:
             return state;
     }

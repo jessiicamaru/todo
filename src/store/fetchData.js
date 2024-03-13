@@ -17,7 +17,7 @@ async function deleteData(id) {
     });
 }
 
-async function editData(id, data) {
+async function patchData(id, data) {
     fetch('http://localhost:3000/todoJob/' + id, {
         method: 'PATCH',
         headers: {
@@ -27,4 +27,14 @@ async function editData(id, data) {
     });
 }
 
-export { addData, deleteData, editData };
+async function putData(id, data) {
+    fetch('http://localhost:3000/todoJob/' + id, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+}
+
+export { addData, deleteData, patchData, putData };

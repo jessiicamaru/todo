@@ -13,7 +13,7 @@ function Main() {
                 setJobs(jobs);
                 state.jobs = jobs;
             });
-    }, [state]);
+    }, []);
 
     return (
         <section className="main">
