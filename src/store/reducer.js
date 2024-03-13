@@ -107,7 +107,7 @@ function reducer(state, action) {
             console.log(state.jobs);
             state.jobs.forEach((job, index) => {
                 if (job.id === action.payload.id) {
-                    action.payload.element.removeChild();
+                    // action.payload.element.removeChild();
                     state.jobs.splice(index, 1);
                 }
             });
@@ -142,6 +142,8 @@ function reducer(state, action) {
                     });
                 }
             });
+
+            console.log(state.jobs);
             return {
                 ...state,
             };

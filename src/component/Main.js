@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect, useLayoutEffect } from 'react';
+import { useContext, useState, useEffect, useLayoutEffect, memo } from 'react';
 import { StoreContext } from '../store';
 import { actions } from '../store';
 
@@ -83,4 +83,4 @@ function Main() {
     );
 }
 
-export default Main;
+export default memo(Main);
