@@ -1,7 +1,6 @@
 import { constants } from '../store';
-import { addData, deleteData, patchData } from './fetchData';
 
-const initFilter = JSON.parse(localStorage.getItem('TODO_FILTER')) || { toggleAll: false, filter: 'All' };
+const initFilter = JSON.parse(localStorage.getItem('TODO_FILTER')) || { toggleAll: false, filter: 'All', jobs: [] };
 
 const initState = {
     jobs: [],
@@ -27,8 +26,15 @@ function reducer(state, action) {
             };
 
         case constants.ADD_JOBS:
-            addData(action.payload);
             state.jobs.push({ ...action.payload });
+
+            const addJobs = {
+                toggleAll: state.toggleAll,
+                filter: state.filter,
+                jobs: state.jobs,
+            };
+            localStorage.setItem('TODO_FILTER', JSON.stringify(addJobs));
+
             return {
                 ...state,
             };
@@ -38,11 +44,15 @@ function reducer(state, action) {
             state.jobs.forEach((job, index) => {
                 if (job.id === action.payload.id) {
                     job.finished = !action.payload.finished;
-                    patchData(action.payload.id, {
-                        ...job,
-                    });
                 }
             });
+
+            const setToggleJob = {
+                toggleAll: state.toggleAll,
+                filter: state.filter,
+                jobs: state.jobs,
+            };
+            localStorage.setItem('TODO_FILTER', JSON.stringify(setToggleJob));
 
             return {
                 ...state,
@@ -52,21 +62,16 @@ function reducer(state, action) {
             if (!action.payload) {
                 state.jobs.forEach((job) => {
                     job.finished = true;
-                    patchData(job.id, {
-                        ...job,
-                    });
                 });
             } else {
                 state.jobs.forEach((job) => {
                     job.finished = false;
-                    patchData(job.id, {
-                        ...job,
-                    });
                 });
             }
             const toggleAllStorage = {
                 filter: state.filter,
                 toggleAll: !action.payload,
+                jobs: state.jobs,
             };
             localStorage.setItem('TODO_FILTER', JSON.stringify(toggleAllStorage));
             return {
@@ -77,13 +82,11 @@ function reducer(state, action) {
         case constants.SET_CLEAR_ALL:
             state.jobs.forEach((job) => {
                 job.finished = false;
-                patchData(job.id, {
-                    ...job,
-                });
             });
             const clearAllStorage = {
                 toggleAll: false,
                 filter: state.filter,
+                jobs: state.jobs,
             };
             localStorage.setItem('TODO_FILTER', JSON.stringify(clearAllStorage));
             return {
@@ -95,6 +98,7 @@ function reducer(state, action) {
             const filterStorage = {
                 toggleAll: state.toggleAll,
                 filter: action.payload,
+                jobs: state.jobs,
             };
             localStorage.setItem('TODO_FILTER', JSON.stringify(filterStorage));
             return {
@@ -107,11 +111,17 @@ function reducer(state, action) {
             console.log(state.jobs);
             state.jobs.forEach((job, index) => {
                 if (job.id === action.payload.id) {
-                    // action.payload.element.removeChild();
                     state.jobs.splice(index, 1);
                 }
             });
-            deleteData(action.payload.id);
+
+            const deleteJob = {
+                toggleAll: state.toggleAll,
+                filter: state.filter,
+                jobs: state.jobs,
+            };
+            localStorage.setItem('TODO_FILTER', JSON.stringify(deleteJob));
+
             return {
                 ...state,
             };
@@ -136,14 +146,15 @@ function reducer(state, action) {
                 if (job.id === action.payload.id) {
                     job.name = action.payload.name;
                     job.finished = action.payload.finished;
-
-                    patchData(job.id, {
-                        ...job,
-                    });
                 }
             });
 
-            console.log(state.jobs);
+            const editJob = {
+                toggleAll: state.toggleAll,
+                filter: state.filter,
+                jobs: state.jobs,
+            };
+            localStorage.setItem('TODO_FILTER', JSON.stringify(editJob));
             return {
                 ...state,
             };

@@ -17,13 +17,24 @@ export const setTodoInput = (payload) => ({
     payload,
 });
 
-export const setJobs = (payload) => ({
-    type: ADD_JOBS,
-    payload: {
-        name: payload,
-        finished: false,
-    },
-});
+export const setJobs = (payload) => {
+    const CryptoJS = require('crypto-js');
+
+    const numberToEncode = Math.floor(Math.random() * 1000000 + 1);
+
+    const stringToEncode = numberToEncode.toString();
+
+    const encodedValue = CryptoJS.MD5(stringToEncode);
+
+    return {
+        type: ADD_JOBS,
+        payload: {
+            name: payload,
+            finished: false,
+            id: encodedValue.toString(),
+        },
+    };
+};
 
 export const setToggleJob = (payload) => {
     return {

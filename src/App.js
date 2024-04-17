@@ -9,11 +9,12 @@ function App() {
     window.addEventListener('beforeunload', function (event) {
         const jobs = state.jobs;
 
-        jobs.forEach((job) => {
-            putData(job.id, {
-                ...job,
-            });
-        });
+        const data = {
+            todoJob: [...jobs],
+            id: 240705,
+        };
+
+        putData('240705', data);
 
         event.preventDefault();
         event.returnValue = '';

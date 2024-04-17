@@ -1,5 +1,5 @@
 async function addData(data) {
-    fetch('http://localhost:3000/todoJob', {
+    fetch('http://localhost:3000/todo', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -9,7 +9,7 @@ async function addData(data) {
 }
 
 async function deleteData(id) {
-    fetch('http://localhost:3000/todoJob/' + id, {
+    fetch('http://localhost:3000/todo/' + id, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ async function deleteData(id) {
 }
 
 async function patchData(id, data) {
-    fetch('http://localhost:3000/todoJob/' + id, {
+    fetch('http://localhost:3000/todo/' + id, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ async function patchData(id, data) {
 }
 
 async function putData(id, data) {
-    fetch('http://localhost:3000/todoJob/' + id, {
+    fetch('http://localhost:3000/todo/' + id, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',

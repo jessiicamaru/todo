@@ -6,10 +6,10 @@ function Footer() {
     const [state, dispatch] = useContext(StoreContext);
     const [count, setCount] = useState(() => {
         let countFalse = 0;
-        fetch('http://localhost:3000/todoJob')
+        fetch('http://localhost:3000/todo')
             .then((res) => res.json())
             .then((jobs) => {
-                jobs.forEach((job) => {
+                jobs[0].todoJob.forEach((job) => {
                     if (job.finished === false) countFalse++;
                 });
 
