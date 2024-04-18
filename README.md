@@ -17,48 +17,46 @@ Your site is live at [here](https://jessiicamaru.github.io/todo/).
 ### `Add work`
 
 Type your work name in the input field and press enter to add.
-![add work](./imageReadme/image.png)
-<img src="./imageReadme/image.png" width="auto" height="auto"/>
+<img src="./imageReadme/image.png" width="100%" height="auto"/>
 
 ### `Mark as done, Mark as uncompleted`
 
 Click on the circle button on the left side of each item to mark and unmark.
-![mark work](./imageReadme/image-1.png)
+<img src="./imageReadme/image-1.png" width="100%" height="auto"/>
 
 ### `Delete work`
 
 Hover on the item that you want to delete then the delete button will appear on the right side.
-![delete work](./imageReadme/image-2.png)
+<img src="./imageReadme/image-2.png" width="100%" height="auto"/>
 
 ### `Edit work`
 
 Double click on the item that you want to edit then the input field will appear. Change the name of the value and press enter, the name will be replaced but the state of finishing will not.
-![edit work](./imageReadme/image-3.png)
+<img src="./imageReadme/image-3.png" width="100%" height="auto"/>
 
 ### `Mark all work completed, Mark all work uncompleted`
 
 Click the button on the left, next to the input field to set all work completed. Click the text clear completed to clear all work completed.
-
-![mark all](./imageReadme/image-4.png)
+<img src="./imageReadme/image-4.png" width="100%" height="auto"/>
 
 ### `Filter`
 
 "All" filter will show off all works.
 <img src="./imageReadme/image-6.png" width="100%" height="auto"/>
 
-![filter work](./imageReadme/image-6.png)
-
 "Active" filter will show off all works that didn't complete.
-![filter work](./imageReadme/image-7.png)
+<img src="./imageReadme/image-7.png" width="100%" height="auto"/>
 
 "Completed" filter will show off all works that were completed.
-![filter work](./imageReadme/image-8.png)
+<img src="./imageReadme/image-8.png" width="100%" height="auto"/>
 
 ### `Use mock API to ave configuration and works when exit, close website`
 
 When you reload, close, exit, the website will annouce to you and call API and save configuration and data.
-![api](./imageReadme/image-5.png)
+<img src="./imageReadme/image-5.png" width="100%" height="auto"/>
 
 ## Contact
 
-[_dung.24_](https://www.instagram.com/_dung.24_/)
+Gmail: [Dandrew2407@gmail.com]()
+Instagram: [_dung.24_](https://www.instagram.com/_dung.24_/)
+Facebook: [Dũng Hoàng](https://www.facebook.com/dunghoang24/)
