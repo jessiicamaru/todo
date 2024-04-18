@@ -57,6 +57,6 @@ When you reload, close, exit, the website will annouce to you and call API and s
 
 ## Contact
 
-Gmail: [Dandrew2407@gmail.com]()
-Instagram: [_dung.24_](https://www.instagram.com/_dung.24_/)
-Facebook: [Dũng Hoàng](https://www.facebook.com/dunghoang24/)
+-   Gmail: [Dandrew2407@gmail.com]()
+-   Instagram: [_dung.24_](https://www.instagram.com/_dung.24_/)
+-   Facebook: [Dũng Hoàng](https://www.facebook.com/dunghoang24/)
