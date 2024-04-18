@@ -44,6 +44,8 @@ Click the button on the left, next to the input field to set all work completed.
 ### `Filter`
 
 "All" filter will show off all works.
+<img src="./imageReadme/image-6.png" width="auto" height="auto"/>
+
 ![filter work](./imageReadme/image-6.png)
 
 "Active" filter will show off all works that didn't complete.
