@@ -18,6 +18,7 @@ Your site is live at [here](https://jessiicamaru.github.io/todo/).
 
 Type your work name in the input field and press enter to add.
 ![add work](./imageReadme/image.png)
+<img src="./imageReadme/image.png" width="auto" height="auto"/>
 
 ### `Mark as done, Mark as uncompleted`
 
@@ -37,6 +38,7 @@ Double click on the item that you want to edit then the input field will appear.
 ### `Mark all work completed, Mark all work uncompleted`
 
 Click the button on the left, next to the input field to set all work completed. Click the text clear completed to clear all work completed.
+
 ![mark all](./imageReadme/image-4.png)
 
 ### `Filter`
