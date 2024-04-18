@@ -10,6 +10,7 @@ import {
     SET_EDITING,
     EDIT_JOB,
     REMOVE_EDITING,
+    CHECK_TOGGLE_ALL,
 } from './constants';
 
 export const setTodoInput = (payload) => ({
@@ -79,5 +80,10 @@ export const editJob = (payload) => ({
 
 export const removeEditing = (payload) => ({
     type: REMOVE_EDITING,
+    payload,
+});
+
+export const checkToggleAll = (payload) => ({
+    type: CHECK_TOGGLE_ALL,
     payload,
 });

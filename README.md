@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Getting Started with TodoList App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Your site is live at [here](https://jessiicamaru.github.io/todo/).
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+-   [Add work](#add-work)
+-   [Mark as done](#mark-as-done-mark-as-uncompleted)
+-   [Mark as uncompleted](#mark-as-done-mark-as-uncompleted)
+-   [Delete work](#delete-work)
+-   [Edit work](#edit-work)
+-   [Filter work](#filter)
+-   [Mark all work uncompleted](#mark-all-work-completed-mark-all-work-uncompleted)
+-   [Mark all work completed](#mark-all-work-completed-mark-all-work-uncompleted)
+-   [Use mock API to ave configuration and works when exit, close website](#use-mock-api-to-ave-configuration-and-works-when-exit-close-website)
 
-### `npm start`
+### `Add work`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Type your work name in the input field and press enter to add.
+![add work](./imageReadme/image.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `Mark as done, Mark as uncompleted`
 
-### `npm test`
+Click on the circle button on the left side of each item to mark and unmark.
+![mark work](./imageReadme/image-1.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Delete work`
 
-### `npm run build`
+Hover on the item that you want to delete then the delete button will appear on the right side.
+![delete work](./imageReadme/image-2.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Edit work`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Double click on the item that you want to edit then the input field will appear. Change the name of the value and press enter, the name will be replaced but the state of finishing will not.
+![edit work](./imageReadme/image-3.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `Mark all work completed, Mark all work uncompleted`
 
-### `npm run eject`
+Click the button on the left, next to the input field to set all work completed. Click the text clear completed to clear all work completed.
+![mark all](./imageReadme/image-4.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `Filter`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+"All" filter will show off all works.
+![filter work](./imageReadme/image-6.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+"Active" filter will show off all works that didn't complete.
+![filter work](./imageReadme/image-7.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+"Completed" filter will show off all works that were completed.
+![filter work](./imageReadme/image-8.png)
 
-## Learn More
+### `Use mock API to ave configuration and works when exit, close website`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+When you reload, close, exit, the website will annouce to you and call API and save configuration and data.
+![api](./imageReadme/image-5.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contact
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[_dung.24_](https://www.instagram.com/_dung.24_/)

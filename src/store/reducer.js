@@ -158,6 +158,27 @@ function reducer(state, action) {
             return {
                 ...state,
             };
+
+        case constants.CHECK_TOGGLE_ALL:
+            let flag = true;
+            state.jobs.forEach((job) => {
+                if (!job.finished) {
+                    flag = false;
+                }
+            });
+
+            state.toggleAll = flag;
+
+            const checkToggleAll = {
+                toggleAll: flag,
+                filter: state.filter,
+                jobs: state.jobs,
+            };
+            localStorage.setItem('TODO_FILTER', JSON.stringify(checkToggleAll));
+            return {
+                ...state,
+            };
+
         default:
             return state;
     }

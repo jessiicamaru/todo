@@ -25,7 +25,12 @@ function Main() {
                 }}
                 checked={state.toggleAll}
             />
-            <label htmlFor="toggle-all">Mark all as complete</label>
+            <label
+                htmlFor="toggle-all"
+                onClick={() => {
+                    dispatch(actions.setToggleAll(state.toggleAll));
+                }}
+            ></label>
             <ul className="todo-list">
                 {jobs &&
                     jobs
@@ -51,6 +56,7 @@ function Main() {
                                             checked={job.finished ? true : false}
                                             onChange={() => {
                                                 dispatch(actions.setToggleJob({ id: job.id, finished: job.finished }));
+                                                dispatch(actions.checkToggleAll(state.toggleAll));
                                             }}
                                         />
                                         <label>{job.name}</label>

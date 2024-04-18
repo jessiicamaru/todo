@@ -9,3 +9,4 @@ export const SET_TODO_EDIT_INPUT = 'set_todo_edit_input';
 export const SET_EDITING = 'set_editing';
 export const EDIT_JOB = 'edit_job';
 export const REMOVE_EDITING = 'remove_editing';
+export const CHECK_TOGGLE_ALL = 'check_toggle_all';
