@@ -1,13 +1,4 @@
-import { Steps } from 'intro.js-react';
-import { useEffect } from 'react';
-
 function Manual() {
-    const steps = [
-        {
-            element: '.new-todo',
-            intro: 'test 1',
-        },
-    ];
     return (
         <section className="todoapp">
             <header className="header">

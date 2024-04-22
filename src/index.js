@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './style/index.css';
 import 'intro.js/introjs.css';
 import App from './App';
-import Manual from './manual';
-import IntroJsManual from './introJsManual';
+import IntroJsManual from './manual/introJsManual';
 import { StoreProvider } from './store';
-import { getRootManual, getRoot } from './getRoot';
+import { getRootManual, getRoot } from './getRoot/getRoot';
 
 const rootManual = ReactDOM.createRoot(getRootManual);
 rootManual.render(<IntroJsManual />);

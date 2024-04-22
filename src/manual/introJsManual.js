@@ -1,10 +1,10 @@
 import 'intro.js/introjs.css';
-import './index.css';
+import '../style/index.css';
 
 import React, { Component } from 'react';
 import { Steps, Hints } from 'intro.js-react';
 import Manual from './manual';
-import { getRoot, getRootManual } from './getRoot';
+import { getRoot, getRootManual } from '../getRoot/getRoot';
 
 export default class IntroJsManual extends Component {
     constructor(props) {

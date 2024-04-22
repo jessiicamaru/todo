@@ -1,4 +1,4 @@
-import './App.css';
+import './style/App.css';
 import { Header, Footer, Main } from './component';
 import { useContext } from 'react';
 import { StoreContext } from './store';
